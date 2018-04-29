@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import logo from './logo.svg';
 import './App.css';
 import RoomList from './components/RoomList';
+src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"
 
 var config = {
     apiKey: "AIzaSyB9owGLvUlEF-jrYLxD54td1ISZlizXbho",
