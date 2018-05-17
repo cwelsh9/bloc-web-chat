@@ -13,22 +13,22 @@ class RoomList extends Component {
 
   componentDidMount() {
     this.roomsRef.on('child_added', snapshot => {
-       console.log(snapshot);
+      const room = snapshot.val();
+      room.key = snapshot.key;
+      this.setState({ rooms: this.state.rooms.concat( room ) })
     });
   }
 
   render() {
     return (
-      <div>
-        <div className="nav">
-
-        </div>
-
-        <div className="chat">
-
-        </div>
-      </div>
-    )
+      <section className='rooms'>
+      {
+        this.state.rooms.map()
+      }
+      </section>
+    );
   }
 }
+
+
 export default RoomList;
