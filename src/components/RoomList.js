@@ -23,12 +23,14 @@ class RoomList extends Component {
     return (
       <section className='rooms'>
       {
-        this.state.rooms.map()
-      }
+        this.state.rooms.map((room) =>
+        {
+          return room.name
+        }
+      )}
       </section>
-    );
+    )}
   }
-}
 
 
 export default RoomList;
