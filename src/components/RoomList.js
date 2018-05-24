@@ -28,9 +28,24 @@ class RoomList extends Component {
           return room.name
         }
       )}
+
+      <form>
+      var textField = document.createElement("INPUT");
+      textField.setAttribute("type", "text");
+
+      var sendButton = document.createElement("INPUT");
+      sendButton.setAttribute("type", "submit");
+
+      </form>
+
+      <form onsubmit="return createRoom();" class="my-form">
+      <input type="submit" value="Submit"/>
+      </form>
+
       </section>
+
     )}
   }
 
 
-export default RoomList;
+  export default RoomList;
