@@ -49,6 +49,7 @@ class RoomList extends Component {
     this.roomsRef.child(room.key).remove();
   }
 
+
   render() {
     return (
       <section id="room-component">
