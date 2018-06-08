@@ -37,7 +37,7 @@ class RoomList extends Component {
         )}
 
         <form id="form">
-          <input type="text" value={this.state.newRoomName}></input>
+          <input type="text" defaultValue="Enter New Room Name"></input>
           <input type="submit" onClick={() => this.createRoom()}></input>
 
         </form>
