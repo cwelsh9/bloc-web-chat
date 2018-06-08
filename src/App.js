@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import './App.css';
 import RoomList from './components/RoomList';
 
+
 var config = {
   apiKey: "AIzaSyB9owGLvUlEF-jrYLxD54td1ISZlizXbho",
   authDomain: "bloc-web-chat.firebaseapp.com",
