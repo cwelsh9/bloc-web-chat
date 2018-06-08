@@ -32,6 +32,11 @@ class RoomList extends Component {
   createRoom(newRoomName) {
     this.roomsRef.push({
       name: newRoomName,
+      createdAt: Date.now(),
+      creator: {
+        email: this.props.user.email,
+        displayName: this.props.user.displayName
+      }
     });
     this.setState({ newRoomName: ''});
   }
@@ -47,23 +52,26 @@ class RoomList extends Component {
   render() {
     return (
       <section id="room-component">
-        <ul id="room-list">
-          {this.state.rooms.map(room => (
-            <li key={room.key} className={this.props.activeRoom && this.props.activeRoom.key === room.key ? "active" : "" }>
-              {room.name}
-            </li>
-          ))}
-        </ul>
+      <ul id="room-list">
+      {this.state.rooms.map(room => (
+        <li key={room.key} className={this.props.activeRoom && this.props.activeRoom.key === room.key ? "active" : "" }>
+        <button onClick={() => this.props.setRoom(room)} className="room-name">{room.name}</button>
+        {room.creator && this.props.user && room.creator.email === this.props.user.email
+        }
+        </li>
+      ))}
+      </ul>
 
-
-      <form id="create-room" onSubmit={ (e) => {e.preventDefault(); this.createRoom(this.state.newRoomName) } }>
-      <input type="text" value={this.state.newRoomName} onChange={this.handleChange.bind(this)} name="newRoomName" placeholder="Enter room name"/>
-      <input type="submit" value="+" />
-      </form>
+      {this.props.user !== null && (
+        <form id="create-room" onSubmit={ (e) => {e.preventDefault(); this.createRoom(this.state.newRoomName) } }>
+        <input type="text" value={this.state.newRoomName} onChange={this.handleChange.bind(this)} name="newRoomName" placeholder="Enter room name"/>
+        <input type="submit" value="New Room" />
+        </form>
+      )}
       </section>
     );
-    }
   }
+}
 
 
-  export default RoomList;
+export default RoomList;

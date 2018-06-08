@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import './App.css';
-import RoomList from './components/RoomList';
+import RoomList from './components/RoomList.js';
+import MessageList from './components/MessageList.js'
+import ChatInput from './components/ChatInput.js'
 
 
 var config = {
@@ -23,6 +25,10 @@ class App extends Component {
       }
   }
 
+  setUser(user) {
+    this.setState({user: user});
+  }
+
   setRoom(room) {
     this.setState({activeRoom: room});
   }
@@ -31,11 +37,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="container">
+        <h3>Bloc Web Chat</h3>
+        <MessageList messages={this.state.messages} />
+        <ChatInput onSend={this.sendHandler} />
       <RoomList firebase={ firebase }/>
       </div>
     );
   }
+
+
 }
 
 export default App;
