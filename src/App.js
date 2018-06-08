@@ -19,17 +19,21 @@ class App extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        rooms: [],
+        activeRoom: null
       }
   }
 
-  componentWillMount() {
-
+  setRoom(room) {
+    this.setState({activeRoom: room});
   }
+
+
 
   render() {
     return (
+      <div className="App">
       <RoomList firebase={ firebase }/>
+      </div>
     );
   }
 }
