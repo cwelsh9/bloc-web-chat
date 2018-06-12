@@ -53,6 +53,7 @@ input[type=submit] {
 }
 
 input[type=text] {
+    position: right;
     width: 50%;
     height: 75px;
     padding: 25px 25px 25px 25px;
@@ -62,4 +63,23 @@ input[type=text] {
     background-color: #f8f8f8;
     margin: 25px 25px 25px 25px;
     resize: none;
+}
+
+.top {
+    position:absolute;
+    left:0; right:0;
+    height: 92px;
+}
+.left {
+    position:absolute;
+    left:0; top:92px; bottom: 0;
+    width: 178px;
+}
+.main {
+    position: absolute;
+    left:178px; top:92px; right:0; bottom:0;
+}
+
+form[id=create-room] {
+  align: right;
 }
