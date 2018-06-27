@@ -18,8 +18,10 @@ class MessageContent extends React.Component {
 }
 
 MessageContent.defaultProps = {
-  message: '',
   user: '',
+  message: '',
+  sentAt: '',
+  roomId: '',
   fromMe: false
 };
 

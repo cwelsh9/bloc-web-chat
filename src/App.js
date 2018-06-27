@@ -39,8 +39,12 @@ class App extends Component {
     return (
       <div className="container">
         <h1>Bloc Web Chat</h1>
-        <MessageList messages={this.state.messages} />
-      <RoomList firebase={ firebase }/>
+        <MessageList
+          activeRoom={this.state.activeRoom}
+          firebase={ firebase } />
+      <RoomList
+        setRoom={this.setRoom.bind(this)}
+        firebase={ firebase } />
       <ChatInput onSend={this.sendHandler} />
       </div>
     );
